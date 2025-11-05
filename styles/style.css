@@ -300,7 +300,6 @@ ol {
 /* Подчеркивание при наведении на поле ввода */
 .search-form__textfield:hover {
   border-bottom: 1px solid #fff;
-  /*text-decoration: underline;*/
 }
 
 .search-form__textfield:active {
@@ -403,7 +402,7 @@ ol {
 }
 
 .button:disabled {
-  cursor: default; /* Для disabled кнопки оставляем стандартный курсор */
+  cursor: default; 
 }
 
 /* Индивидуальные стили для кнопки "Найти" */
