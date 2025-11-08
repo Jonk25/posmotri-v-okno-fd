@@ -13,4 +13,10 @@
   font-size: 30px;
   text-align: center;
   text-transform: uppercase;
+  line-height: 110;
+  letter-spacing: 0;
+  word-spacing: 0px;
+  padding: 7px 0px 3px 5px;
 }
+
+
