@@ -61,7 +61,7 @@ ol {
   align-items: flex-end; /* Прижимаем элементы к низу */
   width: 1140px; 
   justify-content: center;
-  gap: 30px; /* Расстояние между элементами */
+  gap: 0 30px; /* Расстояние между элементами */
 }
 
 /* Секция результата */
@@ -113,7 +113,7 @@ ol {
   margin-top: 20px;/* дополнительный отступ */ 
   gap: 30px;
   position: relative;
-  width: 394px;
+  min-width: 394px;
 }
 
 .content__list {
@@ -139,10 +139,10 @@ ol {
 }
 
 .content__video-card-thumbnail {
-  min-width: 204px;
+  min-width: 194px;
   height: 103px;
   object-fit: cover;
-  object-position: 10px top;
+  object-position: 0px top;
 }
 
 .content__video-card-title {
@@ -166,7 +166,7 @@ ol {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: 6px 0 0 1px;
+  margin: 0;
   padding: 0;
   max-width: 100%;
   letter-spacing: 0.1px;
@@ -181,19 +181,20 @@ ol {
   background-color: #1b1919;
 }
 
-/* Активное состояние */
-.content__card-link_current .content__card-link:active {
+/* активное состояние при нажатии и удержании*/
+.content__card-link:active {
+  background-color: #545050;
+  text-decoration: underline;
+  transform: translateY(1px);
+}
+
+.content__card-link_current {
   background-color: #545050;
 }
 
 /* Подчеркивание при наведении */
 .content__card-link:hover {
   text-decoration: underline;
-}
-
-.content__card-link_current:active {
-  background-color: #545050;
-  text-decoration: none;
 }
 
 /* Фокус состояние */
@@ -209,7 +210,7 @@ ol {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 40px;
+  gap: 36px;
 }
 
 .search-form__fieldset {
@@ -226,8 +227,9 @@ ol {
 
 .search-form__checkbox-list {
   display: flex;
-  gap: 15px;
+  gap: 12px;
   width: 100%;
+  margin: 0;
 }
 
 .search-form__checkbox {
@@ -246,7 +248,7 @@ ol {
 .search-form__label {
   flex: 1;
   display: flex;
-  justify-content: center;
+  align-items: center;
 }
 
 .search-form__label:hover .search-form__label-text {
@@ -269,7 +271,8 @@ ol {
 
 .search-form__textfield {
   width: 100%;
-  padding: 2px 0;
+  min-width: 225px;
+  padding: 2px 0 0 5px;
   border: none;
   border-top: 1px solid currentColor;
   border-bottom: 1px solid currentColor;
@@ -284,10 +287,6 @@ ol {
 
 .search-form__textfield::placeholder {
   color: rgb(255 255 255 / 0.7);
-}
-
-.search-form__label:has(.search-form__textfield) {
-  min-width: 225px;
 }
 
 /* Подчеркивание при наведении на поле ввода */
@@ -326,7 +325,7 @@ ol {
   left: 1px;
   width: 15px;
   height: 15px;
-  border: 1px solid #000000; /* Внутренняя черная рамка */
+  outline: 1px solid #000000; /* Внутренняя черная рамка */
   background-color: transparent;
   transition: background-color 0.2s ease;
 }
